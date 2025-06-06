@@ -1,0 +1,12 @@
+This repository contains the scripts and data needed to generate the results for'Characterising group-level brain connectivity: a framework using Bayesian exponential random graph models'.
+
+The data is in the form of correlation matrices in a fc_mat.RDS file. This is a 587x90x90 array corresponding to 587 90x90 connectivity matrices. These are in age order from youngest to oldest.
+
+All analysis is performed in R. The scripts 00-04*.R generate the results while the scripts F*.R generate the plots in the paper. The R scripts 01-04*.R are accompanied by SLURM scripts 01-04*.txt for use on a computing cluster. The SLURM scripts also contain the parameters used in each corresponding R script.
+
+IMPORTANT: The scripts are based on two past versions of packages not available on CRAN. The first is v0.1 of multibergm, which you can install in R as follows:
+devtools::install_github("brieuclehmann/multibergm@v0.1")
+
+The second is a version of the Bergm package, that permits ERGMs with constraints:
+devtools::install_github("brieuclehmann/Bergm")
+
